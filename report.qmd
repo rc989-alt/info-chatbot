@@ -1,0 +1,23 @@
+---
+title: "Project title"
+subtitle: "Report"
+---
+
+# Introduction
+
+
+
+# Justification of approach
+
+
+
+# Design process
+
+
+
+# Limitations
+
+
+
+# Generative AI reflection
+

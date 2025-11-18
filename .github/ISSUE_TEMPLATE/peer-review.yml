@@ -1,0 +1,61 @@
+name: Peer review (students)
+description: Use this template for peer review teams to leave feedback on the draft stage.
+title: Peer review
+body:
+  - type: input
+    id: team-name
+    attributes:
+      label: Team name
+      description: "What is the name of the team conducting the review?"
+      placeholder: "Example: Fly Cap"
+  - type: input
+    id: team-members
+    attributes:
+      label: Team members (netID)
+      description: "Who are the members of the team conducting the review? Please list their netIDs."
+      placeholder: "Example: bcs88, ahd84, kl123"
+  - type: textarea
+    id: goal
+    attributes:
+      label: Goal
+      description: "Describe the goal of the project."
+  - type: textarea
+    id: data
+    attributes:
+      label: Data
+      description: "Describe the data used or collected."
+  - type: textarea
+    id: approach
+    attributes:
+      label: Approach
+      description: "Describe the approaches, tools, and methods that will be used."
+  - type: textarea
+    id: feedback
+    attributes:
+      label: Feedback
+      description: "Provide constructive feedback on how the team might be able to improve their project. Aim for at least three constructive comments. Make sure your feedback includes at least one comment on the statistical reasoning aspect of the project, but do feel free to comment on aspects beyond the reasoning as well."
+  - type: textarea
+    id: aspect
+    attributes:
+      label: Aspect
+      description: "What aspect of this project are you most interested in and would like to see highlighted in the presentation?"
+  - type: textarea
+    id: reproduce
+    attributes:
+      label: Reproducibility
+      description: "Were you able to reproduce the project by clicking on *Render Project* once you cloned it? Were there any issues with reproducibility?"
+  - type: textarea
+    id: organization
+    attributes:
+      label: Organization
+      description: "Provide constructive feedback on any issues with file and/or code organization."
+  - type: textarea
+    id: own-implementation
+    attributes:
+      label: Reflection on your own project
+      description: "What have you learned from this team's project that you are considering implementing in your own project?"
+  - type: textarea
+    id: further-comments
+    attributes:
+      label: Further comments
+      description: "Any further comments or feedback?"
