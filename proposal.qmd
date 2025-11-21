@@ -13,6 +13,16 @@ This tool is important as graduate program exploration might be overwhelming, es
 
 # Data sources
 
+Our chatbot's knowledge base will be constructed from official Cornell University Information Science Department websites, specifically focused on the MPS in Information Science program. These sources provide authoritative and comprehensive information that prospective and current students need. The primary data sources include:
+
+1. **MPS Program Overview** (https://infosci.cornell.edu/master-professional-studies-information-science): This page contains essential program details including the program structure (2-3 semester options), optional focus areas (User Experience, Data Science, Interactive Technologies, Networks, Crowds, and Markets), degree requirements (minimum 30 credits, course distribution requirements), career outcomes (employment statistics, salary data), and the signature MPS Project component.
+
+2. **Application Information** (https://infosci.cornell.edu/master-professional-studies-information-science/apply): This source provides critical information for prospective applicants including application deadlines (Fall and Spring), required materials (statement of purpose, diversity statement, resume, transcripts, letters of recommendation, video interview), ideal candidate profile and prerequisites (programming experience, mathematical background, writing skills), international student requirements (TOEFL/IELTS scores), and financial support options (scholarships and GTRS positions).
+
+3. **Academic Planning Resources** (https://infosci.cornell.edu/programs/master-professional-studies-information-science/academic-planning): This page details the curriculum structure including Information Systems (IS) and Human and Social Systems (HSS) course requirements (9 credits each), the MPS Project requirement (INFO 5900), Professional Career Development course (INFO 5905), elective options, and planning tools like the course selection spreadsheet.
+
+These official sources will be scraped and processed to create a comprehensive knowledge base for our RAG system. The chatbot will use this verified content to answer questions about admissions, curriculum, requirements, career outcomes, and program policies, ensuring all responses are grounded in official Cornell information with proper citations and links back to source pages.
+
 
 
 # Final product
