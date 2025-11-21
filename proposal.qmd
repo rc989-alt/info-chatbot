@@ -1,18 +1,22 @@
 ---
-title: "Project title"
+title: "LLM Chatbot for Cornell's MPS in Info Science"
 subtitle: "Proposal"
 ---
 
 # Problem or question
 
+Prospective and current students researching Cornell’s Master of Professional Studies (MPS) in Information Science might struggle to find clear, consolidated, and personalized information regarding the program and its policies. For example, the official Cornell websites contain extensive content about curriculum options, concentrations, admissions requirements, career outcomes, degree requirements, and differences between programs. However, this information is fragmented across many pages. The existence of a single chatbot that could consolidate all information and provide users with a single master resource would be extremely helpful. 
 
+Given this need, our goal is to create an LLM-based conversational assistant/chatbot that guides a prospective or current student through the process of exploring the Cornell MPS in Information Science specifically, helping them understand information like whether the program fits their background, whether they meet application requirements (like prerequisites), how the curriculum works (core, elective, concentrations), career outcomes, and differences between this program and other graduate programs in Bowers CIS. 
+
+This tool is important as graduate program exploration might be overwhelming, especially for underserved users who might not be as familiar with graduate school; e.g., first-generation, international, and career-switching students. Providing an interactive and personalized interface can reduce confusion, increase transparency, and support more informed decisions. For example, users or applicants would get clear answers to common questions like, e.g., “What is the cost of tuition?" or "How many credits do I need to graduate?" This tool could thus also reduce any administrative friction in the Information Science Department or Bowers CIS departments since they would need to answer less student queries, which can often become repetitive.
 
 # Data sources
 
 
 
 # Final product
-
+We will build a Shiny-based interactive chatbot, deployed on Shinyapps.io or Posit Connect Cloud. This chatbot application will provide a conversational experience tailored specifically to those exploring or wanting to know more about the MPS in Information Science. The chatbot will use RAG to ground all responses in verified Cornell content and links. This tool will be prompt engineered to answer common questions most effectively.
 
 
 # Ethical concerns
