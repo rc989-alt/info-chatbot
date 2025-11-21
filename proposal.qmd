@@ -30,9 +30,47 @@ We will build a Shiny-based interactive chatbot, deployed on Shinyapps.io or Pos
 
 
 # Ethical concerns
+## 1. Accuracy & Misinformation
+Our chatbot answers questions about admissions, curriculum, and program requirements for the Cornell MPS in Information Science. While we rely on publicly available information from official Cornell websites, LLMs may still generate inaccurate or outdated responses (“hallucinations”). This creates ethical risks because prospective students may make important academic decisions based on incorrect guidance.
 
+To mitigate this, we:
+1. Restrict the chatbot’s knowledge to scraped or manually curated official content.
+2. Design retrieval-augmented prompts that force the model to ground answers in sourced text.
+3. Include disclaimers encouraging users to double-check key information with official Cornell pages.
 
+## 2. Outdated Information Due to Yearly Program Changes
+Graduate program requirements change every year. Course offerings, prerequisites, tuition fees, deadlines, and even visa rules may all be updated by the university. Since our dataset is collected at one specific time, the chatbot may give information that becomes outdated later.
+
+To reduce this problem, we add clear timestamps to the data, plan regular updates, and remind users that the system may not always reflect the newest official information.
+
+## 3. Bias & Fairness
+LLMs may generate responses that unintentionally privilege certain applicant backgrounds (e.g., U.S. vs. international students, CS vs. non-CS backgrounds). Biased wording or differential encouragement could influence user confidence or perceived eligibility.
+
+To reduce unfair outcomes, we:
+- Avoid using model-generated interpretations of applicant competitiveness.
+- Rely strictly on factual program descriptions.
+- Manually review responses for demographic favoritism, exclusionary language, or cultural bias.
+
+## 4. Privacy & Data Handling
+Although our system does not require personally identifiable information, users may voluntarily enter details about GPA, nationality, work experience, or visa status when asking admissions-related questions. These inputs may carry sensitive academic or immigration-related information.
+
+To address this, we avoid storing user queries, do not collect personal data, and ensure that any logs used for debugging are anonymized and deleted regularly. We clearly state that users should not submit personal data.
+
+## 5. Intellectual Property & Web Scraping Ethics
+Although we only use publicly available content from Cornell’s official website, scraping must still respect terms of use, avoid abusive request frequency, and acknowledge content ownership.
+
+We ensure that:
+- Scraping is limited, rate-controlled, and compliant with robots.txt.
+- Cornell is credited as the original source of information.
+- No proprietary or restricted documents are included in the dataset.
 
 # Project timeline
-
+- Nov. 20th: Proposal due
+- Nov. 25th: Data generation
+- Nov. 28th: RAG construction
+- Dec. 3rd: Chatbot construction
+- Dec. 4th: Draft product due
+- Dec. 9th: Product improvement and report labor assignment
+- Dec. 15th: Report refinement
+- Dec. 18th: Final product and report due
 
