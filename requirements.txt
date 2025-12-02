@@ -1,0 +1,4 @@
+chatlas==0.13.2
+python-dotenv==1.1.1
+shiny==1.5.0
+shinychat==0.2.8
