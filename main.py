@@ -7,6 +7,10 @@ import os
 from pathlib import Path
 from shiny import App, ui
 from chatlas import ChatOpenAI
+from dotenv import load_dotenv
+
+# Load environment variables from .env file
+load_dotenv()
 
 # Load knowledge base files
 def load_knowledge_base():
