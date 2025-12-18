@@ -5,12 +5,8 @@ A RAG-powered conversational assistant for Cornell's MPS in Information Science 
 
 import os
 from pathlib import Path
-from shiny import App, ui
+from shiny import App, ui, reactive
 from chatlas import ChatOpenAI
-from dotenv import load_dotenv
-
-# Load environment variables from .env file
-load_dotenv()
 
 # Load knowledge base files
 def load_knowledge_base():
@@ -52,6 +48,7 @@ Guidelines:
 5. If you don't know something or the information isn't in your knowledge base, be honest and direct users to official Cornell resources
 6. Be inclusive and avoid language that might favor certain applicant backgrounds
 7. Remind users to verify critical information (deadlines, requirements) on official Cornell websites
+8. Do not include hyperlinks or URLs in your responses - provide information in plain text format only
 
 What you should NOT do:
 - Do not make up information about program policies, requirements, or deadlines
@@ -100,6 +97,36 @@ app_ui = ui.page_fluid(
                 max-width: 900px;
                 margin: 0 auto;
             }
+            .example-questions {
+                margin-bottom: 20px;
+            }
+            .example-questions h4 {
+                color: #4a5568;
+                font-size: 14px;
+                font-weight: 600;
+                margin-bottom: 10px;
+                text-transform: uppercase;
+                letter-spacing: 0.5px;
+            }
+            .example-btn {
+                background-color: white;
+                border: 1px solid #e2e8f0;
+                color: #718096;
+                padding: 10px 15px;
+                margin: 5px 5px 5px 0;
+                border-radius: 8px;
+                cursor: pointer;
+                transition: all 0.2s ease;
+                font-size: 14px;
+                display: inline-block;
+            }
+            .example-btn:hover {
+                background-color: #f7fafc;
+                border-color: #667eea;
+                color: #667eea;
+                transform: translateY(-1px);
+                box-shadow: 0 2px 4px rgba(0,0,0,0.1);
+            }
         """)
     ),
     ui.div(
@@ -123,6 +150,20 @@ app_ui = ui.page_fluid(
 
             *Note: Always verify important details on official Cornell websites.*
             """)
+        ),
+        ui.div(
+            {"class": "example-questions"},
+            ui.h4("Try these example questions:"),
+            ui.input_action_button(
+                "example1",
+                "What are the prerequisites for the MPS program?",
+                class_="example-btn"
+            ),
+            ui.input_action_button(
+                "example2",
+                "How many credits are required to graduate?",
+                class_="example-btn"
+            ),
         ),
         ui.chat_ui("chat")
     )
@@ -149,6 +190,25 @@ def server(input, output, session):
 
         # Append the streaming response to the chat
         await chat.append_message_stream(response)
+
+    # Handle example question button clicks
+    @reactive.effect
+    @reactive.event(input.example1)
+    async def _():
+        question = "What are the prerequisites for the MPS program?"
+        await chat.append_message({"role": "user", "content": question})
+        response = await chat_client.stream_async(question)
+        await chat.append_message_stream(response)
+
+    @reactive.effect
+    @reactive.event(input.example2)
+    async def _():
+        question = "How many credits are required to graduate?"
+        await chat.append_message({"role": "user", "content": question})
+        response = await chat_client.stream_async(question)
+        await chat.append_message_stream(response)
+
+
 
 # Create the Shiny app
 app = App(app_ui, server)

@@ -1,138 +1,126 @@
 # Cornell MPS Courses & Focus Areas
 
-
-
 ## Instructions
 
-
-
-MPS courses that have been approved for the Information Systems (IS), Human and Social Systems (HSS), and Electives (E) are listed on the following sheet. 
+MPS courses that have been approved for the Information Systems (IS), Human and Social Systems (HSS), and Electives (E) are listed on the following sheet.
 
 The courses on the following sheet have all been approved but may or may not be offered in a given semester. Check the Cornell Class Roster to determine course availability.
 
-Focus Areas:
-DS = Data Science
-IT = Interactive Technology
-UX = User Experience
-NCM = Network, Crowds, and Markets
+Focus Areas: DS = Data Science IT = Interactive Technology UX = User Experience NCM = Network, Crowds, and Markets
 
 All INFO, CS, STSCI courses at 5000+ level that are not listed on the sheet are automatically pre-approved as electives.
 
 INFO 7090 IS Colloquium is intended for PhD students only. This course does not count toward the IS MPS degree requirements.
 
-INFO 5000 CPT Practical Training in Information Science for International Students - If you have had a CPT approved you MUST enroll in this course during the semester following your CPT, i.e. Summer CPT enroll in INFO 5000 in the fall semester. Send Olivia Howarth, oah23@cornell.edu, your internship offer prior to enrolling. This course does not count toward the IS MPS degree requirements.
+INFO 5000 CPT Practical Training in Information Science for International Students - If you have had a CPT approved you MUST enroll in this course during the semester following your CPT, i.e. Summer CPT enroll in INFO 5000 in the fall semester. Send Olivia Howarth, oah23\@cornell.edu, your internship offer prior to enrolling. This course does not count toward the IS MPS degree requirements.
 
-INFO 7900 Independent Research counts as a pre-approved elective. Before enrolling, you must reach an agreement with the specific faculty member that you will conduct research with and for how many credits. 
+INFO 7900 Independent Research counts as a pre-approved elective. Before enrolling, you must reach an agreement with the specific faculty member that you will conduct research with and for how many credits.
 
-To request an elective approval for a course that is not listed as pre-approved, send an email to Gilly Leshed, gl87@cornell.edu, with the following information:
-- Course ID (must be 5000+ level)
-- Course title
-- Course description from the Cornell Class Roster and the course syllabus if available.
-- Justification for why you want to take the course and its relevancy to your MPS degree.
+To request an elective approval for a course that is not listed as pre-approved, send an email to Gilly Leshed, gl87\@cornell.edu, with the following information: - Course ID (must be 5000+ level) - Course title - Course description from the Cornell Class Roster and the course syllabus if available. - Justification for why you want to take the course and its relevancy to your MPS degree.
 
-To request a waiver for INFO 5905 Career Development Course, contact Rebecca Salk, rebecca.salk@cornell.edu.  
+To request a waiver for INFO 5905 Career Development Course, contact Rebecca Salk, rebecca.salk\@cornell.edu.
 
 ## MPS Courses Table
 
-| Class                                                                                       | Credits   | IS/HSS/E   | Semester Offered   | Focus Area      | Notes                                                                                                                                          |
-|:--------------------------------------------------------------------------------------------|:----------|:-----------|:-------------------|:----------------|:-----------------------------------------------------------------------------------------------------------------------------------------------|
-| INFO 5905 Professional Career Development                                                   | 0.5       | Mandatory  | FA, SP             | All Areas       | S/U only; to request a waiver, email Rebecca Salk, rebecca.salk@cornell.edu.                                                                   |
-| INFO 5900 MPS Project                                                                       | 3         | Project    | FA, SP             | All Areas       | nan                                                                                                                                            |
-| NBA 6480 Digital Technology Practicum                                                       | 4         | Project    | SP                 | nan             | nan                                                                                                                                            |
-| DEA 6040 Future Body Craft: Fabricating On-Skin Interfaces                                  | 3         | IS / HSS   | FA                 | IT, UX          | nan                                                                                                                                            |
-| INFO 5101 Introduction to Learning Analytics                                                | 3         | IS / HSS   | FA, SP             | DS, UX          | nan                                                                                                                                            |
-| INFO 5152 Advanced Topics in Computer Game Design                                           | 3         | IS / HSS   | SP                 | IT, UX          | IS/HSS depends on the student's role in the course project: programmer - IS, designer - HSS.                                                   |
-| INFO 5321 Introduction to Rapid Prototyping and Physical Computing                          | 4         | IS / HSS   | FA, SP             | IT, UX          | nan                                                                                                                                            |
-| INFO 5371 Studying Social Inequality using DS                                               | 3         | IS / HSS   | SP                 | DS, NCM         | nan                                                                                                                                            |
-| INFO 5440 App Design and Prototyping                                                        | 3         | IS / HSS   | FA                 | IT, UX          | nan                                                                                                                                            |
-| INFO 6120 Ubiquitous Computing                                                              | 3         | IS / HSS   | SP                 | IT, UX          | nan                                                                                                                                            |
-| INFO 6220 Networks II: Market Design                                                        | 3         | IS / HSS   | SP                 | NCM             | nan                                                                                                                                            |
-| INFO 6420 Re-Designing Robots                                                               | 3         | IS / HSS   | SP                 | IT, UX          | nan                                                                                                                                            |
-| INFO 5306 Crowdsourcing and Human Computation                                               | 4         | IS / HSS   | FA, SP             | DS, UX, NCM     | nan                                                                                                                                            |
-| DEA 6510 Human Factors and Inclusive Design                                                 | 3         | HSS        | FA                 | UX              | nan                                                                                                                                            |
-| DEA 5210 Interaction Design Studio                                                          | 4         | HSS        | SP                 | UX              | nan                                                                                                                                            |
-| INFO 5125 Project Management                                                                | 4         | HSS        | FA, SP             | DS, IT, UX, NCM | nan                                                                                                                                            |
-| HADM 5890 The Law of the Internet and E-Commerce                                            | 3         | HSS        | FA                 | NCM             | nan                                                                                                                                            |
-| INFO 5145 Privacy and Security in the Data Economy                                          | 3         | HSS        | FA                 | DS, NCM         | nan                                                                                                                                            |
-| INFO 5170 AI in Organizations                                                               | 3         | HSS        | FA                 | DS, NCM         | nan                                                                                                                                            |
-| INFO 5240 Designing Technology for Social Impact​                                            | 3         | HSS        | FA                 | IT, UX          | nan                                                                                                                                            |
-| INFO 5250 Surveillance and Privacy                                                          | 3         | HSS        | FA                 | DS, NCM         | nan                                                                                                                                            |
-| INFO 5260 Computing on Earth                                                                | 3         | HSS        | SP                 | DS, IT, UX, NCM | You must be prepared for high volumes of reading and expected to significantly participate in class discussions.                               |
-| INFO 5301 Ethics in New Media                                                               | 3         | HSS        | FA                 | DS, IT, UX, NCM | nan                                                                                                                                            |
-| INFO 5355 Human Computer Interaction Design​                                                 | 3         | HSS        | FA                 | IT, UX          | nan                                                                                                                                            |
-| INFO 5400 Qualitative User Research & Design Methods                                        | 3         | HSS        | SP                 | IT, UX          | nan                                                                                                                                            |
-| INFO 5450 Computer- Mediated Communication                                                  | 3         | HSS        | SP                 | IT, UX          | nan                                                                                                                                            |
-| INFO 5505 Computing and Global Development                                                  | 3         | HSS        | FA/SP              | IT, UX          | nan                                                                                                                                            |
-| INFO 6940 Special Topics - Human Centered Design and Engaged Media                          | 4         | HSS        | FA                 | NCM, UX         | nan                                                                                                                                            |
-| INFO 6940 Special Topics - Human-AI Interaction Design Research                             | 3         | HSS        | FA                 | DS, IT, UX      | nan                                                                                                                                            |
-| INFO 5940 Special Topics - Building Inclusive Comp Orgs                                     | 3         | HSS        | SP                 | DS, IT, UX      | nan                                                                                                                                            |
-| INFO 5940 Special Topics - Technology and Social Change Practicum                           | 3         | HSS        | SP                 | IT, UX          | nan                                                                                                                                            |
-| INFO 5940 Special Topics- U.S Copyright Law                                                 | 3         | HSS        | FA, SP             | IT, NCM, UX     | nan                                                                                                                                            |
-| INFO 5140 - Law, Policy, and Politics of Cybersecurity                                      | 3         | HSS        | SP                 | DS, IT          | nan                                                                                                                                            |
-| INFO 5940 Special Topics - Producing Culture About, With, and Through Tech / Art Technology | 3         | HSS        | SP                 | IT, UX          | nan                                                                                                                                            |
-| INFO 6310 Behavior and Information Technology                                               | 3         | HSS        | FA                 | IT, UX          | nan                                                                                                                                            |
-| INFO 6500 Language and Technology                                                           | 3         | HSS        | FA                 | DS, UX          | nan                                                                                                                                            |
-| INFO 6520 Human Computer Interaction Studio                                                 | 4         | HSS        | FA, SP             | IT, UX          | nan                                                                                                                                            |
-| INFO 6600 Technology for Underserved Communities                                            | 3         | HSS        | SP                 | IT, UX          | nan                                                                                                                                            |
-| INFO 6940 Special Topics- Red Tape: The Media of Bureaucracy                                | 3         | HSS        | SP                 | NCM             | nan                                                                                                                                            |
-| INFO 6940 Special Topics- Rural Computing and Rural Infrastructure                          | 3         | HSS        | SP                 | DS, UX          | nan                                                                                                                                            |
-| INFO 6940 Special Topics- Delightful Data, Delightful AI                                    | 1         | HSS        | FA                 | DS, IT, UX      | nan                                                                                                                                            |
-| INFO 5431 Teams and Technology                                                              | 3         | HSS        | FA                 | UX              | nan                                                                                                                                            |
-| INFO 6940 History of AI in Economic and Political Context                                   | 3         | HSS        | SP                 | DS, NCM         | nan                                                                                                                                            |
-| CS 5150 Software Engineering                                                                | 4         | IS         | SP                 | IT, UX          | nan                                                                                                                                            |
-| CS 5320 Introduction to Database Systems                                                    | 3         | IS         | FA                 | DS, IT, NCM     | nan                                                                                                                                            |
-| CS 5412 Cloud Computing                                                                     | 4         | IS         | SP                 | DS, IT          | nan                                                                                                                                            |
-| CS 5430 System Security                                                                     | 4         | IS         | SP                 | IT              | Students must have the technical background to master the material and do the assignments. The pre-requisite is a course in operating systems. |
-| CS 5700 Foundations of Artificial Intelligence                                              | 3         | IS         | FA, SP             | DS, IT          | nan                                                                                                                                            |
-| CS 5740 Natural Language Processing                                                         | 4         | IS         | FA, SP             | DS, IT, UX, NCM | nan                                                                                                                                            |
-| CS 5756 Robot Learning                                                                      | 4         | IS         | SP                 | DS, IT          | nan                                                                                                                                            |
-| CS 5758 Autonomous Mobile Robots                                                            | 4         | IS         | SP                 | IT, UX          | nan                                                                                                                                            |
-| CS 5780 Introduction to Machine Learning                                                    | 4         | IS         | FA, SP             | DS, IT          | nan                                                                                                                                            |
-| CS 6754 Human-Robot Interaction, Algorithms and Experiments                                 | 3         | IS         | FA                 | DS, IT, UX      | nan                                                                                                                                            |
-| INFO 5001 Computing for Information Science                                                 | 4         | IS         | FA                 | DS, NCM         | nan                                                                                                                                            |
-| INFO 5100 Visual Data Analytics for the Web                                                 | 3         | IS         | FA, SP             | DS, IT, UX      | nan                                                                                                                                            |
-| INFO 5306 Crowdsourcing and Human Computation                                               | 4         | IS / HSS   | FA, SP             | DS, UX, NCM     | nan                                                                                                                                            |
-| INFO 5311 Interactive Information Visualization                                             | 3         | IS         | SP                 | DS, UX          | nan                                                                                                                                            |
-| INFO 5312 Data Communications                                                               | 4         | IS         | SP                 | DS, UX          | nan                                                                                                                                            |
-| INFO 5390 Practical Principles for Designing Fair Algorithms                                | 3         | IS         | SP                 | DS, NCM         | nan                                                                                                                                            |
-| INFO 5940 Special Topics: Building AI Powered applications (Lec 009)                        | 3         | IS         | FA                 | DS, UX, IT, NCM | nan                                                                                                                                            |
-| INFO 5940 Applied Machine Learning: Methods and Applications                                | 3         | IS         | FA                 | DS, NCM         | nan                                                                                                                                            |
-| INFO 5940 AI Chatbots, RAG, AI Agents                                                       | 3         | IS         | FA, SP             | DS, IT, UX      | nan                                                                                                                                            |
-| INFO 5940 Solving challenges at the enterprise with AI                                      | 3         | IS         | FA                 | DS, IT, UX      | nan                                                                                                                                            |
-| INFO 5940 Building LLM Applications                                                         | 3         | IS         | FA                 | DS, IT, UX      | nan                                                                                                                                            |
-| INFO 5940 AI Innovation Lab                                                                 | 3         | IS         | FA                 | DS, IT, UX      | nan                                                                                                                                            |
-| INFO 5556 Business Intelligence Systems                                                     | 4         | IS         | FA                 | DS, IT          | nan                                                                                                                                            |
-| INFO 6300/ CS 6740 Advanced Language Technologies                                           | 3         | IS         | SP                 | NCM             | nan                                                                                                                                            |
-| INFO 6350 Text Mining History and Literature                                                | 4         | IS         | FA                 | DS              | nan                                                                                                                                            |
-| INFO 6850 The Structure of Information Networks                                             | 4         | IS         | FA                 | DS, NCM         | nan                                                                                                                                            |
-| INFO 6940 How LLMs work, their potential and limitations                                    | 3         | IS         | FA                 | DS, NCM         | nan                                                                                                                                            |
-| INFO 6940 Quantifying scientific ideas, careers and teams                                   | 3         | IS         | SP                 | DS, NCM         | nan                                                                                                                                            |
-| STSCI 5065 Big Data Management and Analysis                                                 | 3         | IS         | SP                 | DS              | nan                                                                                                                                            |
-| STSCI 5740 Data Mining and Machine Learning                                                 | 4         | IS         | FA                 | DS, NCM         | nan                                                                                                                                            |
-| All INFO/CS/STSCI 5000+ level courses that are not on this list are pre-approved electives. | nan       | E          | nan                | nan             | nan                                                                                                                                            |
-| AEM 5110 Design and Innovation                                                              | 3         | E          | SP                 | nan             | nan                                                                                                                                            |
-| AEM 5220 Digital Business Strategy                                                          | 3         | E          | FA                 | nan             | nan                                                                                                                                            |
-| CEE 5900 Project Management                                                                 | 4         | E          | FA, SP             | nan             | nan                                                                                                                                            |
-| DEA 5520 Virtual Experience of Designed Environments                                        | 3         | E          | SP                 | nan             | nan                                                                                                                                            |
-| ENMGT 5930 Data Analytics                                                                   | 4         | E          | FA                 | nan             | nan                                                                                                                                            |
-| ENMGT 6020 Managing a Culture of Innovation                                                 | 3         | E          | FA                 | nan             | nan                                                                                                                                            |
-| HADM 6470 Consumer Behavior                                                                 | 3         | E          | SP                 | nan             | nan                                                                                                                                            |
-| ILRST 6100 Statistical Methods I                                                            | 4         | E          | FA                 | nan             | nan                                                                                                                                            |
-| NBA 5070 Entrepreneurship for Scientists and Engineers                                      | 3         | E          | FA, SP             | nan             | nan                                                                                                                                            |
-| NBA 5110 Financial Modeling                                                                 | 1.5, 3    | E          | FA, SP             | nan             | nan                                                                                                                                            |
-| NBA 5150 Leadership Theory and Practice                                                     | 3         | E          | FA, SP             | nan             | nan                                                                                                                                            |
-| NBA 5180 Intro to Design and Innovation                                                     | 1.5       | E          | FA, SP             | nan             | nan                                                                                                                                            |
-| NBA 5330 Management Cases                                                                   | 1.5       | E          | FA, SP             | nan             | nan                                                                                                                                            |
-| NBA 5380 The Business Idea Factory                                                          | 1.5       | E          | FA, SP             | nan             | nan                                                                                                                                            |
-| NBA 5410 Project Management                                                                 | 1.5       | E          | FA, SP             | nan             | nan                                                                                                                                            |
-| NBA 5640 The Business of Entrepreneurship                                                   | 3         | E          | FA, SP             | nan             | nan                                                                                                                                            |
-| NBA 6070 Designing Data Products                                                            | 1.5       | E          | SP                 | nan             | nan                                                                                                                                            |
-| NBA 6200 Marketing Research                                                                 | 3         | E          | SP                 | nan             | nan                                                                                                                                            |
-| NBA 6550 Business Data Analysis with SQL                                                    | 1.5       | E          | SP                 | nan             | nan                                                                                                                                            |
-| NBA 6921 AI for Business Applications                                                       | 3         | E          | SP                 | nan             | nan                                                                                                                                            |
-| NCC 5010 Data Analytics and Modeling                                                        | 2.5       | E          | SP                 | nan             | nan                                                                                                                                            |
-| NCC 5080 Managing Operations                                                                | 2.5       | E          | SP                 | nan             | nan                                                                                                                                            |
-| ORIE 5500 Engineering Probability and Statistics II                                         | 4         | E          | FA                 | nan             | nan                                                                                                                                            |
-| ORIE 5580 Simulation Modeling and Analysis                                                  | 4         | E          | FA                 | nan             | nan                                                                                                                                            |
-| ORIE 5630 Operations Research Tools for Financial Engineering                               | 3         | E          | FA                 | nan             | nan                                                                                                                                            |
-| SYSEN 5888 Deep Learning                                                                    | 4         | E          | SP                 | nan             | nan                                                                                                                                            |
+| Class | Credits | IS/HSS/E | Semester Offered | Focus Area | Notes |
+|:------------|:--------|:--------|:--------|:--------|:-----------------------|
+| INFO 5905 Professional Career Development | 0.5 | Mandatory | FA, SP | All Areas | S/U only; to request a waiver, email Rebecca Salk, rebecca.salk\@cornell.edu. |
+| INFO 5900 MPS Project | 3 | Project | FA, SP | All Areas | nan |
+| NBA 6480 Digital Technology Practicum | 4 | Project | SP | nan | nan |
+| DEA 6040 Future Body Craft: Fabricating On-Skin Interfaces | 3 | IS / HSS | FA | IT, UX | nan |
+| INFO 5101 Introduction to Learning Analytics | 3 | IS / HSS | FA, SP | DS, UX | nan |
+| INFO 5152 Advanced Topics in Computer Game Design | 3 | IS / HSS | SP | IT, UX | IS/HSS depends on the student's role in the course project: programmer - IS, designer - HSS. |
+| INFO 5321 Introduction to Rapid Prototyping and Physical Computing | 4 | IS / HSS | FA, SP | IT, UX | nan |
+| INFO 5371 Studying Social Inequality using DS | 3 | IS / HSS | SP | DS, NCM | nan |
+| INFO 5440 App Design and Prototyping | 3 | IS / HSS | FA | IT, UX | nan |
+| INFO 6120 Ubiquitous Computing | 3 | IS / HSS | SP | IT, UX | nan |
+| INFO 6220 Networks II: Market Design | 3 | IS / HSS | SP | NCM | nan |
+| INFO 6420 Re-Designing Robots | 3 | IS / HSS | SP | IT, UX | nan |
+| INFO 5306 Crowdsourcing and Human Computation | 4 | IS / HSS | FA, SP | DS, UX, NCM | nan |
+| DEA 6510 Human Factors and Inclusive Design | 3 | HSS | FA | UX | nan |
+| DEA 5210 Interaction Design Studio | 4 | HSS | SP | UX | nan |
+| INFO 5125 Project Management | 4 | HSS | FA, SP | DS, IT, UX, NCM | nan |
+| HADM 5890 The Law of the Internet and E-Commerce | 3 | HSS | FA | NCM | nan |
+| INFO 5145 Privacy and Security in the Data Economy | 3 | HSS | FA | DS, NCM | nan |
+| INFO 5170 AI in Organizations | 3 | HSS | FA | DS, NCM | nan |
+| INFO 5240 Designing Technology for Social Impact​ | 3 | HSS | FA | IT, UX | nan |
+| INFO 5250 Surveillance and Privacy | 3 | HSS | FA | DS, NCM | nan |
+| INFO 5260 Computing on Earth | 3 | HSS | SP | DS, IT, UX, NCM | You must be prepared for high volumes of reading and expected to significantly participate in class discussions. |
+| INFO 5301 Ethics in New Media | 3 | HSS | FA | DS, IT, UX, NCM | nan |
+| INFO 5355 Human Computer Interaction Design​ | 3 | HSS | FA | IT, UX | nan |
+| INFO 5400 Qualitative User Research & Design Methods | 3 | HSS | SP | IT, UX | nan |
+| INFO 5450 Computer- Mediated Communication | 3 | HSS | SP | IT, UX | nan |
+| INFO 5505 Computing and Global Development | 3 | HSS | FA/SP | IT, UX | nan |
+| INFO 6940 Special Topics - Human Centered Design and Engaged Media | 4 | HSS | FA | NCM, UX | nan |
+| INFO 6940 Special Topics - Human-AI Interaction Design Research | 3 | HSS | FA | DS, IT, UX | nan |
+| INFO 5940 Special Topics - Building Inclusive Comp Orgs | 3 | HSS | SP | DS, IT, UX | nan |
+| INFO 5940 Special Topics - Technology and Social Change Practicum | 3 | HSS | SP | IT, UX | nan |
+| INFO 5940 Special Topics- U.S Copyright Law | 3 | HSS | FA, SP | IT, NCM, UX | nan |
+| INFO 5140 - Law, Policy, and Politics of Cybersecurity | 3 | HSS | SP | DS, IT | nan |
+| INFO 5940 Special Topics - Producing Culture About, With, and Through Tech / Art Technology | 3 | HSS | SP | IT, UX | nan |
+| INFO 6310 Behavior and Information Technology | 3 | HSS | FA | IT, UX | nan |
+| INFO 6500 Language and Technology | 3 | HSS | FA | DS, UX | nan |
+| INFO 6520 Human Computer Interaction Studio | 4 | HSS | FA, SP | IT, UX | nan |
+| INFO 6600 Technology for Underserved Communities | 3 | HSS | SP | IT, UX | nan |
+| INFO 6940 Special Topics- Red Tape: The Media of Bureaucracy | 3 | HSS | SP | NCM | nan |
+| INFO 6940 Special Topics- Rural Computing and Rural Infrastructure | 3 | HSS | SP | DS, UX | nan |
+| INFO 6940 Special Topics- Delightful Data, Delightful AI | 1 | HSS | FA | DS, IT, UX | nan |
+| INFO 5431 Teams and Technology | 3 | HSS | FA | UX | nan |
+| INFO 6940 History of AI in Economic and Political Context | 3 | HSS | SP | DS, NCM | nan |
+| CS 5150 Software Engineering | 4 | IS | SP | IT, UX | nan |
+| CS 5320 Introduction to Database Systems | 3 | IS | FA | DS, IT, NCM | nan |
+| CS 5412 Cloud Computing | 4 | IS | SP | DS, IT | nan |
+| CS 5430 System Security | 4 | IS | SP | IT | Students must have the technical background to master the material and do the assignments. The pre-requisite is a course in operating systems. |
+| CS 5700 Foundations of Artificial Intelligence | 3 | IS | FA, SP | DS, IT | nan |
+| CS 5740 Natural Language Processing | 4 | IS | FA, SP | DS, IT, UX, NCM | nan |
+| CS 5756 Robot Learning | 4 | IS | SP | DS, IT | nan |
+| CS 5758 Autonomous Mobile Robots | 4 | IS | SP | IT, UX | nan |
+| CS 5780 Introduction to Machine Learning | 4 | IS | FA, SP | DS, IT | nan |
+| CS 6754 Human-Robot Interaction, Algorithms and Experiments | 3 | IS | FA | DS, IT, UX | nan |
+| INFO 5001 Computing for Information Science | 4 | IS | FA | DS, NCM | nan |
+| INFO 5100 Visual Data Analytics for the Web | 3 | IS | FA, SP | DS, IT, UX | nan |
+| INFO 5306 Crowdsourcing and Human Computation | 4 | IS / HSS | FA, SP | DS, UX, NCM | nan |
+| INFO 5311 Interactive Information Visualization | 3 | IS | SP | DS, UX | nan |
+| INFO 5312 Data Communications | 4 | IS | SP | DS, UX | nan |
+| INFO 5390 Practical Principles for Designing Fair Algorithms | 3 | IS | SP | DS, NCM | nan |
+| INFO 5940 Special Topics: Building AI Powered applications (Lec 009) | 3 | IS | FA | DS, UX, IT, NCM | nan |
+| INFO 5940 Applied Machine Learning: Methods and Applications | 3 | IS | FA | DS, NCM | nan |
+| INFO 5940 AI Chatbots, RAG, AI Agents | 3 | IS | FA, SP | DS, IT, UX | nan |
+| INFO 5940 Solving challenges at the enterprise with AI | 3 | IS | FA | DS, IT, UX | nan |
+| INFO 5940 Building LLM Applications | 3 | IS | FA | DS, IT, UX | nan |
+| INFO 5940 AI Innovation Lab | 3 | IS | FA | DS, IT, UX | nan |
+| INFO 5556 Business Intelligence Systems | 4 | IS | FA | DS, IT | nan |
+| INFO 6300/ CS 6740 Advanced Language Technologies | 3 | IS | SP | NCM | nan |
+| INFO 6350 Text Mining History and Literature | 4 | IS | FA | DS | nan |
+| INFO 6850 The Structure of Information Networks | 4 | IS | FA | DS, NCM | nan |
+| INFO 6940 How LLMs work, their potential and limitations | 3 | IS | FA | DS, NCM | nan |
+| INFO 6940 Quantifying scientific ideas, careers and teams | 3 | IS | SP | DS, NCM | nan |
+| STSCI 5065 Big Data Management and Analysis | 3 | IS | SP | DS | nan |
+| STSCI 5740 Data Mining and Machine Learning | 4 | IS | FA | DS, NCM | nan |
+| All INFO/CS/STSCI 5000+ level courses that are not on this list are pre-approved electives. | nan | E | nan | nan | nan |
+| AEM 5110 Design and Innovation | 3 | E | SP | nan | nan |
+| AEM 5220 Digital Business Strategy | 3 | E | FA | nan | nan |
+| CEE 5900 Project Management | 4 | E | FA, SP | nan | nan |
+| DEA 5520 Virtual Experience of Designed Environments | 3 | E | SP | nan | nan |
+| ENMGT 5930 Data Analytics | 4 | E | FA | nan | nan |
+| ENMGT 6020 Managing a Culture of Innovation | 3 | E | FA | nan | nan |
+| HADM 6470 Consumer Behavior | 3 | E | SP | nan | nan |
+| ILRST 6100 Statistical Methods I | 4 | E | FA | nan | nan |
+| NBA 5070 Entrepreneurship for Scientists and Engineers | 3 | E | FA, SP | nan | nan |
+| NBA 5110 Financial Modeling | 1.5, 3 | E | FA, SP | nan | nan |
+| NBA 5150 Leadership Theory and Practice | 3 | E | FA, SP | nan | nan |
+| NBA 5180 Intro to Design and Innovation | 1.5 | E | FA, SP | nan | nan |
+| NBA 5330 Management Cases | 1.5 | E | FA, SP | nan | nan |
+| NBA 5380 The Business Idea Factory | 1.5 | E | FA, SP | nan | nan |
+| NBA 5410 Project Management | 1.5 | E | FA, SP | nan | nan |
+| NBA 5640 The Business of Entrepreneurship | 3 | E | FA, SP | nan | nan |
+| NBA 6070 Designing Data Products | 1.5 | E | SP | nan | nan |
+| NBA 6200 Marketing Research | 3 | E | SP | nan | nan |
+| NBA 6550 Business Data Analysis with SQL | 1.5 | E | SP | nan | nan |
+| NBA 6921 AI for Business Applications | 3 | E | SP | nan | nan |
+| NCC 5010 Data Analytics and Modeling | 2.5 | E | SP | nan | nan |
+| NCC 5080 Managing Operations | 2.5 | E | SP | nan | nan |
+| ORIE 5500 Engineering Probability and Statistics II | 4 | E | FA | nan | nan |
+| ORIE 5580 Simulation Modeling and Analysis | 4 | E | FA | nan | nan |
+| ORIE 5630 Operations Research Tools for Financial Engineering | 3 | E | FA | nan | nan |
+| SYSEN 5888 Deep Learning | 4 | E | SP | nan | nan |

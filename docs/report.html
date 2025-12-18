@@ -1,0 +1,589 @@
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml" lang="en" xml:lang="en"><head>
+
+<meta charset="utf-8">
+<meta name="generator" content="quarto-1.7.32">
+
+<meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes">
+
+
+<title>LLM Chatbot for Cornell’s MPS in Info Science</title>
+<style>
+code{white-space: pre-wrap;}
+span.smallcaps{font-variant: small-caps;}
+div.columns{display: flex; gap: min(4vw, 1.5em);}
+div.column{flex: auto; overflow-x: auto;}
+div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+ul.task-list{list-style: none;}
+ul.task-list li input[type="checkbox"] {
+  width: 0.8em;
+  margin: 0 0.8em 0.2em -1em; /* quarto-specific, see https://github.com/quarto-dev/quarto-cli/issues/4556 */ 
+  vertical-align: middle;
+}
+</style>
+
+
+<script src="report_files/libs/clipboard/clipboard.min.js"></script>
+<script src="report_files/libs/quarto-html/quarto.js" type="module"></script>
+<script src="report_files/libs/quarto-html/tabsets/tabsets.js" type="module"></script>
+<script src="report_files/libs/quarto-html/popper.min.js"></script>
+<script src="report_files/libs/quarto-html/tippy.umd.min.js"></script>
+<script src="report_files/libs/quarto-html/anchor.min.js"></script>
+<link href="report_files/libs/quarto-html/tippy.css" rel="stylesheet">
+<link href="report_files/libs/quarto-html/quarto-syntax-highlighting-37eea08aefeeee20ff55810ff984fec1.css" rel="stylesheet" id="quarto-text-highlighting-styles">
+<script src="report_files/libs/bootstrap/bootstrap.min.js"></script>
+<link href="report_files/libs/bootstrap/bootstrap-icons.css" rel="stylesheet">
+<link href="report_files/libs/bootstrap/bootstrap-813c323200a87c37e262811031999de4.min.css" rel="stylesheet" append-hash="true" id="quarto-bootstrap" data-mode="light">
+
+
+<link rel="stylesheet" href="styles.css">
+</head>
+
+<body class="fullcontent quarto-light">
+
+<div id="quarto-content" class="page-columns page-rows-contents page-layout-article">
+
+<main class="content" id="quarto-document-content">
+
+<header id="title-block-header" class="quarto-title-block default">
+<div class="quarto-title">
+<h1 class="title">LLM Chatbot for Cornell’s MPS in Info Science</h1>
+<p class="subtitle lead"></p><p><strong>INFO 5940</strong> December 18, 2025 Authors: To be determined</p><p></p>
+</div>
+
+
+
+<div class="quarto-title-meta">
+
+    
+  
+    
+  </div>
+  
+
+
+</header>
+
+
+<section id="introduction" class="level1">
+<h1>Introduction</h1>
+<p>The goal of this project was to create an interactive conversational assistant that helps prospective and current students explore Cornell University’s Master of Professional Studies (MPS) in Information Science program. The MPS-IS degree at Cornell offers multiple concentration areas, a flexible curriculum, and a practice-oriented project requirement. However, this information is spread across several web pages and may be difficult for applicants to navigate. Also, many students may have the same recurring questions about admissions criteria, degree requirements, and the differences between MPS programs offered across Cornell.</p>
+<p>To address this problem, we were motivated to build a chatbot that unifies these needs and provides an accessible interface to propsective and current students to easily access program information. The objective is for users to be able to ask free-form, natural language questions about different aspects of the curriculum, concentrations, admissions process, credit requirements, professional development courses, or the MPS project. The second objective is for the chatbot to (using a combination of a structured system prompt and a lightweight retrieval-augmented approach) provide grounded, document based answers. Consequently, the “data” that our product is pulling from is a set of curated Markdown files extracted from program websites containing information like program requirements, admissions information, and curriculum descriptions. These documents are incorporated directly into the model’s context window, allowing the assistant to ground its answers in verified Cornell sources.</p>
+</section>
+<section id="justification-of-approach" class="level1">
+<h1>Justification of Approach</h1>
+<p>To solve the previously stated problem and meet the stated objectives, the team created a Shiny for Python chatbot application that allows users to ask natural-language questions and receive grounded answers based on official program materials. The product consists of two core components: a conversational interface and a curated knowledge base containing validated Markdown documents extracted from Cornell websites and program guides.</p>
+<p>Again, the intended audience includes prospective applicants, admitted students, and current MPS students who want a clearer understanding of curriculum options, degree requirements, application components, or the structure of the MPS project—all in an easily accesible interface without having to search around too much. These groups frequently encounter fragmented or conflicting information online, and many people may rely too much on informal sources such as Reddit, Discord, or student anecdotes. By centralizing official information into a single conversational assistant, the product we created meets the needs of users who prefer immediate, direct, and personalized answers without navigating multiple university channels of information.</p>
+<p>Our Retrieval Augemented Generation (RAG) based approach for our tool is justified because we wish to balance reliability with usability. We chose a document-grounded chatbot rather than an open-ended conversational agent because accuracy is critical for academic program guidance. Incorporating official program documents directly into the system prompt ensures that the model’s responses remain consistent with authoritative sources while avoiding hallucinations, which was a major feature of earlier LLM’s.</p>
+<p>The Shiny for Python framework further supports these goals by enabling a clean and intuitive-to-use interface suitable for both technical and non-technical users. The chat-first design minimizes cognitive load and mirrors the way students already seek information: by simply asking questions that they would to, say, an admissions officer or a program administrator. The product will thus relieve stress from an administrative perspective and meet the needs of program directors, who want to reduce spending time answering similar questions over and over again.</p>
+</section>
+<section id="design-process" class="level1">
+<h1>Design Process</h1>
+<p>The design process for this project had to consider challenges and decisions in prompt engineering, retrieval-augmented generation, and natural language interfaces. We began by scoping the problem domain, identifying the specific informational needs of prospective MPS students, and mapping these needs to how to structure the system prompt. As we learned in class, system prompts are essential in setting behavior, tone, and memory constraints Drawing on these concepts, we constructed a detailed system prompt that establishes the assistant’s role, sets boundaries around speculation, enforces accuracy when discussing academic policies, and explicitly sets the model’s tone to be supportive and professional. For example, our system instructions included guidance on tone like, “Be helpful, encouraging, and patient with all users.” We decided to have these kind of system prompts and explicit, deterministic instructions because we knew that they, along with chat history, majorly influence the quality of model responses across turns.</p>
+<p>Another design decision involved grounding the model in authoritative program information. In previous lectures, we explored vector stores, embeddings, chunking strategies, and retrieval tools. For the current iteration of this project, however, we realized there was a relatively small scope, well-structured set of program documents. Thus, we made the design choice to adopt a prompt-level RAG approach, where Markdown documents are concatenated into a knowledge base string injected directly into the system prompt. This mirrors the “direct context injection” pattern discussed in class. We recognized the positives of this approach was the ability to avoid overhead associating with indexing, similarity search, or retrieval packages like ragnar that we were exposed to in class. (We also note that our product code is based in Python, not R.)</p>
+<p>Following this choice, another core design challenge was optimizing the size and structure of the system prompt after embedding the entire knowledge base. We considered context-window limitations and noted from lectures that LLMs perform best when a prompt is hierarchical, well-structured, and not overly verbose. In our implementation, the load_knowledge_base() function reads each Markdown file from the knowledge/ directory, adds a filename-based section header (e.g., ## degree_reqs.md), and concatenates the full contents of every file into a single string inserted directly into SYSTEM_PROMPT.</p>
+<p>Because this entire block is included verbatim, we needed to curate the Markdown files themselves. This involved removing unnecessary text, ensuring consistent formatting, and keeping each document focused on a single topic so the model could interpret information effectively. This design choice gave the knowledge base a predictable, stable structure without exceeding token limits, and helped the model navigate the embedded program information even without a vector-store retriever or chunk-ranking mechanism.</p>
+<p>Finally, our choice of interface design was informed by previous class lectures and exercises, where we built Shiny and ShinyChat applications integrating LLMs. We chose the Shiny framework because it provides a final product that gives a clean chat UI, has asynchronous streaming of responses, and has separation of UI and server logic.</p>
+<p>Overall, our design choices were focused on giving the model enough conversational freedom, but preventing hallucinations and misinformation. We addressed this by adding explicit “what not to do” constraints to the system prompt and by ensuring that the knowledge base contained comprehensive information.</p>
+</section>
+<section id="product-testing" class="level1">
+<h1>Product Testing</h1>
+<p>We conducted testing using a comprehensive question test set that is seen in the repository as file test_bank.md. This test bank covered questions across different categories such as admissions, degree requirements, and course planning. These questions were tested in the deployed Shiny app and in Positron. Responses where checked for accuracy relative to the embedded program documents, grounding (avoiding unsupported claims), and clarity.</p>
+<p>For example, here are two queries we asked the chatbot and the responses it gave.</p>
+<section id="sample-question-1" class="level2">
+<h2 class="anchored" data-anchor-id="sample-question-1">Sample Question #1</h2>
+<p>The following question is #8 in the test bank file.</p>
+<p><strong>Query:</strong> What are the minimum IS and HSS credit requirements for graduation, and what types of courses fall under each category?</p>
+<p><strong>Response</strong>:</p>
+<div class="callout callout-style-default callout-note callout-titled" title="Response">
+<div class="callout-header d-flex align-content-center">
+<div class="callout-icon-container">
+<i class="callout-icon"></i>
+</div>
+<div class="callout-title-container flex-fill">
+Response
+</div>
+</div>
+<div class="callout-body-container callout-body">
+<p>To graduate from the Cornell MPS in Information Science program, you must meet specific credit requirements for both Information Systems (IS) and Human and Social Systems (HSS) courses.</p>
+<section id="minimum-is-and-hss-credit-requirements" class="level3">
+<h3 class="anchored" data-anchor-id="minimum-is-and-hss-credit-requirements">Minimum IS and HSS Credit Requirements</h3>
+<ul>
+<li><strong>Information Systems (IS):</strong> At least 9 credits<br>
+</li>
+<li><strong>Human and Social Systems (HSS):</strong> At least 9 credits<br>
+</li>
+<li><strong>Total credits for degree:</strong> At least 30 credits of 5000-level (or higher) courses</li>
+</ul>
+</section>
+<section id="what-types-of-courses-fall-under-each-category" class="level3">
+<h3 class="anchored" data-anchor-id="what-types-of-courses-fall-under-each-category">What Types of Courses Fall Under Each Category?</h3>
+<section id="information-systems-is-courses" class="level4">
+<h4 class="anchored" data-anchor-id="information-systems-is-courses">Information Systems (IS) Courses</h4>
+<p>These courses focus on technical skills related to building, designing, and analyzing information systems. Topics often include:</p>
+<ul>
+<li>Programming and software engineering<br>
+</li>
+<li>Databases and data analytics<br>
+</li>
+<li>Machine learning, algorithms, and AI<br>
+</li>
+<li>Systems infrastructure, security, and cloud computing</li>
+</ul>
+<p><strong>Sample IS courses:</strong> - CS 5780 Introduction to Machine Learning<br>
+- CS 5320 Introduction to Database Systems<br>
+- INFO 5100 Visual Data Analytics for the Web<br>
+- INFO 5311 Interactive Information Visualization</p>
+</section>
+<section id="human-and-social-systems-hss-courses" class="level4">
+<h4 class="anchored" data-anchor-id="human-and-social-systems-hss-courses">Human and Social Systems (HSS) Courses</h4>
+<p>HSS courses focus on how technology interacts with people, organizations, and society. These explore:</p>
+<ul>
+<li>Human-computer interaction and user experience<br>
+</li>
+<li>Technology policy, privacy, and law<br>
+</li>
+<li>Social, behavioral, and organizational aspects of digital systems<br>
+</li>
+<li>Ethics and societal impacts of computing</li>
+</ul>
+<p><strong>Sample HSS courses:</strong> - INFO 5355 Human Computer Interaction Design<br>
+- DEA 6510 Human Factors and Inclusive Design<br>
+- INFO 5145 Privacy and Security in the Data Economy<br>
+- INFO 5400 Qualitative User Research &amp; Design Methods</p>
+<p><strong>Note:</strong> - Some courses may fulfill either IS or HSS requirements depending on your project role or focus within the course. - For a complete, up-to-date list, refer to the MPS Course Spreadsheet or the official Cornell class roster.</p>
+</section>
+</section>
+</div>
+</div>
+</section>
+<section id="sample-question-2" class="level2">
+<h2 class="anchored" data-anchor-id="sample-question-2">Sample Question #2</h2>
+<p>Similarly, here we asked the chatbot a query that was designed to be out-of-scope or irrelevant.</p>
+<p><strong>Query:</strong> I love spaghetti.</p>
+<p><strong>Response</strong>: ::: {.callout-note title=“Response”} That’s great to hear! While spaghetti isn’t directly related to the Cornell MPS in Information Science program, having diverse interests and hobbies (including food!) can be a great way to connect with classmates and build community. If you have any questions about the MPS program curriculum, application process, or student life at Cornell, feel free to ask! :::</p>
+<p>Overall, the chatbot reliably answered core questions and appropriately handled edge cases by declining to guess when information was not present in the knowledge base. Issues discovered during testing primarily involved wording vagueness and link accessibility. They were addressed by tightening the system prompt and refining the formatting of the Markdown knowledge files to make key details easier for the model to locate.</p>
+</section>
+</section>
+<section id="limitations" class="level1">
+<h1>Limitations</h1>
+<p>While the chatbot provides a clear and structured way to explore the Cornell MPS in Information Science program, it also has several limitations. These limitations mainly relate to data coverage, system scope, and the nature of large language models.</p>
+<p>First, the chatbot relies on a fixed set of documents collected from official Cornell websites at a specific point in time. Graduate program information such as course offerings, degree requirements, tuition, and application deadlines may change from year to year. As a result, some answers may become outdated if the knowledge base is not updated regularly. In future versions, this issue could be reduced by scheduling more frequent updates or by connecting the system to live data sources when possible.</p>
+<p>Second, the scope of the chatbot is intentionally limited to the MPS in Information Science program. While this helps improve clarity and accuracy, it also means that the system cannot answer detailed questions about other graduate programs within Bowers CIS or across Cornell University. Users who want to compare multiple programs may still need to consult additional resources. Expanding the scope to include more programs would require careful design to avoid confusion and information overload.</p>
+<p>Third, the chatbot is designed to provide factual, policy-based information and does not evaluate applicant competitiveness or give personalized recommendations. This design choice supports fairness and reduces potential bias, but it may feel restrictive to users who are seeking advice on their chances of admission or course selection. Future versions could explore ways to offer higher-level guidance while still avoiding subjective or misleading judgments.</p>
+<p>Finally, although the chatbot is built on verified sources, it still depends on a large language model to generate responses. This means there is always a small risk of unclear wording or incomplete answers, especially for complex or highly specific questions. Continued testing, prompt refinement, and user feedback would be necessary to further improve response quality and reliability.</p>
+</section>
+<section id="generative-ai-reflection" class="level1">
+<h1>Generative AI reflection</h1>
+<p>Generative AI played a central role in this project, not only as a technical tool but also as a core part of the system design. At the beginning of the project, the team viewed large language models mainly as flexible text generators that could answer user questions in a conversational way. However, as development progressed, we gained a deeper understanding of both the strengths and limitations of LLMs, which strongly influenced how we designed and constrained the final product.</p>
+<p>One key lesson learned was that while LLMs are effective at understanding natural language questions, they are not reliable when asked to answer factual or policy-related questions without proper constraints. Early experiments showed that allowing the model to rely on general knowledge could lead to vague or inaccurate responses. This led us to shift from a more open-ended use of LLMs to a more controlled approach, where the model responds only based on a predefined set of official documents. Through this process, we learned that controlling what the model is allowed to know is often more important than increasing model complexity.</p>
+<p>Overall, this project helped us better understand the broader role of generative AI in real-world applications. While LLMs offer powerful capabilities for interaction and language understanding, they must be used with clear boundaries and human oversight. The lessons learned from this project align closely with responsible AI practices and emphasize the importance of designing AI systems that support users without misleading them or replacing critical human judgment.</p>
+</section>
+
+</main>
+<!-- /main column -->
+<script id="quarto-html-after-body" type="application/javascript">
+  window.document.addEventListener("DOMContentLoaded", function (event) {
+    const icon = "";
+    const anchorJS = new window.AnchorJS();
+    anchorJS.options = {
+      placement: 'right',
+      icon: icon
+    };
+    anchorJS.add('.anchored');
+    const isCodeAnnotation = (el) => {
+      for (const clz of el.classList) {
+        if (clz.startsWith('code-annotation-')) {                     
+          return true;
+        }
+      }
+      return false;
+    }
+    const onCopySuccess = function(e) {
+      // button target
+      const button = e.trigger;
+      // don't keep focus
+      button.blur();
+      // flash "checked"
+      button.classList.add('code-copy-button-checked');
+      var currentTitle = button.getAttribute("title");
+      button.setAttribute("title", "Copied!");
+      let tooltip;
+      if (window.bootstrap) {
+        button.setAttribute("data-bs-toggle", "tooltip");
+        button.setAttribute("data-bs-placement", "left");
+        button.setAttribute("data-bs-title", "Copied!");
+        tooltip = new bootstrap.Tooltip(button, 
+          { trigger: "manual", 
+            customClass: "code-copy-button-tooltip",
+            offset: [0, -8]});
+        tooltip.show();    
+      }
+      setTimeout(function() {
+        if (tooltip) {
+          tooltip.hide();
+          button.removeAttribute("data-bs-title");
+          button.removeAttribute("data-bs-toggle");
+          button.removeAttribute("data-bs-placement");
+        }
+        button.setAttribute("title", currentTitle);
+        button.classList.remove('code-copy-button-checked');
+      }, 1000);
+      // clear code selection
+      e.clearSelection();
+    }
+    const getTextToCopy = function(trigger) {
+        const codeEl = trigger.previousElementSibling.cloneNode(true);
+        for (const childEl of codeEl.children) {
+          if (isCodeAnnotation(childEl)) {
+            childEl.remove();
+          }
+        }
+        return codeEl.innerText;
+    }
+    const clipboard = new window.ClipboardJS('.code-copy-button:not([data-in-quarto-modal])', {
+      text: getTextToCopy
+    });
+    clipboard.on('success', onCopySuccess);
+    if (window.document.getElementById('quarto-embedded-source-code-modal')) {
+      const clipboardModal = new window.ClipboardJS('.code-copy-button[data-in-quarto-modal]', {
+        text: getTextToCopy,
+        container: window.document.getElementById('quarto-embedded-source-code-modal')
+      });
+      clipboardModal.on('success', onCopySuccess);
+    }
+      var localhostRegex = new RegExp(/^(?:http|https):\/\/localhost\:?[0-9]*\//);
+      var mailtoRegex = new RegExp(/^mailto:/);
+        var filterRegex = new RegExp('/' + window.location.host + '/');
+      var isInternal = (href) => {
+          return filterRegex.test(href) || localhostRegex.test(href) || mailtoRegex.test(href);
+      }
+      // Inspect non-navigation links and adorn them if external
+     var links = window.document.querySelectorAll('a[href]:not(.nav-link):not(.navbar-brand):not(.toc-action):not(.sidebar-link):not(.sidebar-item-toggle):not(.pagination-link):not(.no-external):not([aria-hidden]):not(.dropdown-item):not(.quarto-navigation-tool):not(.about-link)');
+      for (var i=0; i<links.length; i++) {
+        const link = links[i];
+        if (!isInternal(link.href)) {
+          // undo the damage that might have been done by quarto-nav.js in the case of
+          // links that we want to consider external
+          if (link.dataset.originalHref !== undefined) {
+            link.href = link.dataset.originalHref;
+          }
+        }
+      }
+    function tippyHover(el, contentFn, onTriggerFn, onUntriggerFn) {
+      const config = {
+        allowHTML: true,
+        maxWidth: 500,
+        delay: 100,
+        arrow: false,
+        appendTo: function(el) {
+            return el.parentElement;
+        },
+        interactive: true,
+        interactiveBorder: 10,
+        theme: 'quarto',
+        placement: 'bottom-start',
+      };
+      if (contentFn) {
+        config.content = contentFn;
+      }
+      if (onTriggerFn) {
+        config.onTrigger = onTriggerFn;
+      }
+      if (onUntriggerFn) {
+        config.onUntrigger = onUntriggerFn;
+      }
+      window.tippy(el, config); 
+    }
+    const noterefs = window.document.querySelectorAll('a[role="doc-noteref"]');
+    for (var i=0; i<noterefs.length; i++) {
+      const ref = noterefs[i];
+      tippyHover(ref, function() {
+        // use id or data attribute instead here
+        let href = ref.getAttribute('data-footnote-href') || ref.getAttribute('href');
+        try { href = new URL(href).hash; } catch {}
+        const id = href.replace(/^#\/?/, "");
+        const note = window.document.getElementById(id);
+        if (note) {
+          return note.innerHTML;
+        } else {
+          return "";
+        }
+      });
+    }
+    const xrefs = window.document.querySelectorAll('a.quarto-xref');
+    const processXRef = (id, note) => {
+      // Strip column container classes
+      const stripColumnClz = (el) => {
+        el.classList.remove("page-full", "page-columns");
+        if (el.children) {
+          for (const child of el.children) {
+            stripColumnClz(child);
+          }
+        }
+      }
+      stripColumnClz(note)
+      if (id === null || id.startsWith('sec-')) {
+        // Special case sections, only their first couple elements
+        const container = document.createElement("div");
+        if (note.children && note.children.length > 2) {
+          container.appendChild(note.children[0].cloneNode(true));
+          for (let i = 1; i < note.children.length; i++) {
+            const child = note.children[i];
+            if (child.tagName === "P" && child.innerText === "") {
+              continue;
+            } else {
+              container.appendChild(child.cloneNode(true));
+              break;
+            }
+          }
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(container);
+          }
+          return container.innerHTML
+        } else {
+          if (window.Quarto?.typesetMath) {
+            window.Quarto.typesetMath(note);
+          }
+          return note.innerHTML;
+        }
+      } else {
+        // Remove any anchor links if they are present
+        const anchorLink = note.querySelector('a.anchorjs-link');
+        if (anchorLink) {
+          anchorLink.remove();
+        }
+        if (window.Quarto?.typesetMath) {
+          window.Quarto.typesetMath(note);
+        }
+        if (note.classList.contains("callout")) {
+          return note.outerHTML;
+        } else {
+          return note.innerHTML;
+        }
+      }
+    }
+    for (var i=0; i<xrefs.length; i++) {
+      const xref = xrefs[i];
+      tippyHover(xref, undefined, function(instance) {
+        instance.disable();
+        let url = xref.getAttribute('href');
+        let hash = undefined; 
+        if (url.startsWith('#')) {
+          hash = url;
+        } else {
+          try { hash = new URL(url).hash; } catch {}
+        }
+        if (hash) {
+          const id = hash.replace(/^#\/?/, "");
+          const note = window.document.getElementById(id);
+          if (note !== null) {
+            try {
+              const html = processXRef(id, note.cloneNode(true));
+              instance.setContent(html);
+            } finally {
+              instance.enable();
+              instance.show();
+            }
+          } else {
+            // See if we can fetch this
+            fetch(url.split('#')[0])
+            .then(res => res.text())
+            .then(html => {
+              const parser = new DOMParser();
+              const htmlDoc = parser.parseFromString(html, "text/html");
+              const note = htmlDoc.getElementById(id);
+              if (note !== null) {
+                const html = processXRef(id, note);
+                instance.setContent(html);
+              } 
+            }).finally(() => {
+              instance.enable();
+              instance.show();
+            });
+          }
+        } else {
+          // See if we can fetch a full url (with no hash to target)
+          // This is a special case and we should probably do some content thinning / targeting
+          fetch(url)
+          .then(res => res.text())
+          .then(html => {
+            const parser = new DOMParser();
+            const htmlDoc = parser.parseFromString(html, "text/html");
+            const note = htmlDoc.querySelector('main.content');
+            if (note !== null) {
+              // This should only happen for chapter cross references
+              // (since there is no id in the URL)
+              // remove the first header
+              if (note.children.length > 0 && note.children[0].tagName === "HEADER") {
+                note.children[0].remove();
+              }
+              const html = processXRef(null, note);
+              instance.setContent(html);
+            } 
+          }).finally(() => {
+            instance.enable();
+            instance.show();
+          });
+        }
+      }, function(instance) {
+      });
+    }
+        let selectedAnnoteEl;
+        const selectorForAnnotation = ( cell, annotation) => {
+          let cellAttr = 'data-code-cell="' + cell + '"';
+          let lineAttr = 'data-code-annotation="' +  annotation + '"';
+          const selector = 'span[' + cellAttr + '][' + lineAttr + ']';
+          return selector;
+        }
+        const selectCodeLines = (annoteEl) => {
+          const doc = window.document;
+          const targetCell = annoteEl.getAttribute("data-target-cell");
+          const targetAnnotation = annoteEl.getAttribute("data-target-annotation");
+          const annoteSpan = window.document.querySelector(selectorForAnnotation(targetCell, targetAnnotation));
+          const lines = annoteSpan.getAttribute("data-code-lines").split(",");
+          const lineIds = lines.map((line) => {
+            return targetCell + "-" + line;
+          })
+          let top = null;
+          let height = null;
+          let parent = null;
+          if (lineIds.length > 0) {
+              //compute the position of the single el (top and bottom and make a div)
+              const el = window.document.getElementById(lineIds[0]);
+              top = el.offsetTop;
+              height = el.offsetHeight;
+              parent = el.parentElement.parentElement;
+            if (lineIds.length > 1) {
+              const lastEl = window.document.getElementById(lineIds[lineIds.length - 1]);
+              const bottom = lastEl.offsetTop + lastEl.offsetHeight;
+              height = bottom - top;
+            }
+            if (top !== null && height !== null && parent !== null) {
+              // cook up a div (if necessary) and position it 
+              let div = window.document.getElementById("code-annotation-line-highlight");
+              if (div === null) {
+                div = window.document.createElement("div");
+                div.setAttribute("id", "code-annotation-line-highlight");
+                div.style.position = 'absolute';
+                parent.appendChild(div);
+              }
+              div.style.top = top - 2 + "px";
+              div.style.height = height + 4 + "px";
+              div.style.left = 0;
+              let gutterDiv = window.document.getElementById("code-annotation-line-highlight-gutter");
+              if (gutterDiv === null) {
+                gutterDiv = window.document.createElement("div");
+                gutterDiv.setAttribute("id", "code-annotation-line-highlight-gutter");
+                gutterDiv.style.position = 'absolute';
+                const codeCell = window.document.getElementById(targetCell);
+                const gutter = codeCell.querySelector('.code-annotation-gutter');
+                gutter.appendChild(gutterDiv);
+              }
+              gutterDiv.style.top = top - 2 + "px";
+              gutterDiv.style.height = height + 4 + "px";
+            }
+            selectedAnnoteEl = annoteEl;
+          }
+        };
+        const unselectCodeLines = () => {
+          const elementsIds = ["code-annotation-line-highlight", "code-annotation-line-highlight-gutter"];
+          elementsIds.forEach((elId) => {
+            const div = window.document.getElementById(elId);
+            if (div) {
+              div.remove();
+            }
+          });
+          selectedAnnoteEl = undefined;
+        };
+          // Handle positioning of the toggle
+      window.addEventListener(
+        "resize",
+        throttle(() => {
+          elRect = undefined;
+          if (selectedAnnoteEl) {
+            selectCodeLines(selectedAnnoteEl);
+          }
+        }, 10)
+      );
+      function throttle(fn, ms) {
+      let throttle = false;
+      let timer;
+        return (...args) => {
+          if(!throttle) { // first call gets through
+              fn.apply(this, args);
+              throttle = true;
+          } else { // all the others get throttled
+              if(timer) clearTimeout(timer); // cancel #2
+              timer = setTimeout(() => {
+                fn.apply(this, args);
+                timer = throttle = false;
+              }, ms);
+          }
+        };
+      }
+        // Attach click handler to the DT
+        const annoteDls = window.document.querySelectorAll('dt[data-target-cell]');
+        for (const annoteDlNode of annoteDls) {
+          annoteDlNode.addEventListener('click', (event) => {
+            const clickedEl = event.target;
+            if (clickedEl !== selectedAnnoteEl) {
+              unselectCodeLines();
+              const activeEl = window.document.querySelector('dt[data-target-cell].code-annotation-active');
+              if (activeEl) {
+                activeEl.classList.remove('code-annotation-active');
+              }
+              selectCodeLines(clickedEl);
+              clickedEl.classList.add('code-annotation-active');
+            } else {
+              // Unselect the line
+              unselectCodeLines();
+              clickedEl.classList.remove('code-annotation-active');
+            }
+          });
+        }
+    const findCites = (el) => {
+      const parentEl = el.parentElement;
+      if (parentEl) {
+        const cites = parentEl.dataset.cites;
+        if (cites) {
+          return {
+            el,
+            cites: cites.split(' ')
+          };
+        } else {
+          return findCites(el.parentElement)
+        }
+      } else {
+        return undefined;
+      }
+    };
+    var bibliorefs = window.document.querySelectorAll('a[role="doc-biblioref"]');
+    for (var i=0; i<bibliorefs.length; i++) {
+      const ref = bibliorefs[i];
+      const citeInfo = findCites(ref);
+      if (citeInfo) {
+        tippyHover(citeInfo.el, function() {
+          var popup = window.document.createElement('div');
+          citeInfo.cites.forEach(function(cite) {
+            var citeDiv = window.document.createElement('div');
+            citeDiv.classList.add('hanging-indent');
+            citeDiv.classList.add('csl-entry');
+            var biblioDiv = window.document.getElementById('ref-' + cite);
+            if (biblioDiv) {
+              citeDiv.innerHTML = biblioDiv.innerHTML;
+            }
+            popup.appendChild(citeDiv);
+          });
+          return popup.innerHTML;
+        });
+      }
+    }
+  });
+  </script>
+</div> <!-- /content -->
+
+
+
+
+</body></html>
